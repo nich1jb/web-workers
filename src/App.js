@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import styled from "styled-components";
+import logo from "./logo.svg";
+import Timer from "./Timer";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const MainWrapper = styled.div`
+  text-align: center;
+`;
+
+const Header = styled.header`
+  background-color: #222;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 150px;
+  padding: 20px;
+  color: white;
+`;
+
+const Logo = styled.img`
+  height: 80px;
+`;
+
+const App = () => (
+  <MainWrapper>
+    <Header>
+      <Logo src={logo} alt="logo" />
+      <h1>Web Worker Demo</h1>
+    </Header>
+    <section className="App-intro">
+      <Timer />
+    </section>
+  </MainWrapper>
+);
 
 export default App;
